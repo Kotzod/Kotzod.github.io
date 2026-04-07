@@ -1,45 +1,89 @@
-# Kotzod.github.io
+# Oliver Chandler Portfolio
 
-Personal portfolio homepage (GitHub Pages) for Oliver Chandler.
+Personal portfolio site for Oliver Chandler, focused on software engineering,
+cloud systems, backend architecture, data pipelines, and security.
 
-This site is intentionally build-less (plain HTML/CSS/JS) and includes an interactive canvas playground powered by the `@chenglou/pretext` library for text measurement & layout.
+The site is fully static and build-less, using plain HTML, CSS, and JavaScript.
 
-## What’s in here
+## Live Profile Links
 
-- `index.html` – semantic, accessible page structure
-- `styles.css` – styling for the portfolio sections
-- `main.js` – interactions (tilt effects + pretext canvas playground + project spotlight)
-- `CNAME` – custom domain configuration (if enabled)
+- GitHub: https://github.com/Kotzod
+- LinkedIn: https://www.linkedin.com/in/oliver-chandler-b50997261/
+- Email: choliver2005@gmail.com
 
-## Run locally
+## Tech Stack
 
-Because this is a static site, you can open `index.html` directly.
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Canvas API
 
-For more reliable module loading (recommended), serve the folder with a local web server:
+## Site Sections
 
-- Python: `python -m http.server 5173`
-- Then open: http://localhost:5173/
+- Hero
+  - Profile title and quick actions
+  - Smooth-scroll "View Projects" button
+- About Me
+  - Strong profile summary
+  - Interactive particle text canvas
+- Skills and Expertise
+  - Backend Engineering
+  - Cloud and DevOps
+  - Security Engineering
+  - Data Engineering
+  - Full Stack Development
+  - Embedded Systems
+- Experience
+  - Salesforce Developer
+  - Logistics Systems (Hungarian Post)
+  - Independent Work and Part-Time Roles
+- Education
+  - BSc Software Engineering, Tampere University of Applied Sciences
+  - GPA and relevant focus areas
+- Additional
+  - Problem-solving, teamwork, and technical interests
+- Languages
+  - English, Hungarian, Spanish, Finnish
+- Projects
+  - Secure Backend API
+  - Data Pipeline System
+  - Full Stack Web Platform
+  - Frontend Application (React + Vite)
+  - Weather Analytics Dashboard
+  - Unity Game Prototype
+- Hobbies
+  - Basketball, martial arts, chess, board games, card games
+- Contact
+  - Clickable Email, LinkedIn, and GitHub chips
+- Certifications
+  - AWS Cloud Foundations
+  - CCNA: Introduction to Networks
+  - Introduction to Cybersecurity
 
-## Featured projects
+## Interactive Features
 
-These are shown on the homepage in the Projects section.
+- Animated ocean-like dot background rendered on canvas
+- Draggable basketball UI element
+- Card tilt interactions on hover
+- About section particle interaction canvas
+- Smooth scrolling for in-page navigation
 
-- Dreamhouse – Salesforce DX project with a full platform-style setup.
-- Final_project_Oliver_Chandler – final Python data pipeline project.
-- Final_Assignment – React/Vite final assignment (routing + modern frontend tooling).
-- final_app – Node/Express backend using MongoDB/Mongoose + JWT auth + validation.
-- fullstack_project – full-stack app with separate frontend/backend.
-- bowd-w04-example-main – full-stack example app (backend + frontend).
-- final_assignement – weather forecast app (API + charts + statistics).
-- valentine-projects-main – collection of multiple interactive mini-projects.
-- Unity project – Unity game project bundle.
-- server – standalone server-side app used in the fullstack coursework.
+## Project Structure
 
-## Pretext usage
+- `index.html` - page structure and content
+- `styles.css` - layout, visual system, animations, and responsive styling
+- `main.js` - interaction logic and canvas effects
+- `CNAME` - custom domain configuration (if used)
 
-The site loads Pretext at runtime (no bundler) via an ESM CDN and uses it to:
+## Run Locally
 
-- render the hero + lab canvas effects, and
-- lay out Project Spotlight text on a canvas when you hover/focus a project card.
+You can open `index.html` directly, but a local server is recommended.
 
-If Pretext fails to load, the site falls back to a simpler canvas renderer and all project info remains available as normal HTML.
+1. Run:
+   - `python -m http.server 5173`
+2. Open:
+   - http://localhost:5173/
+
+## Deployment
+
+This repository is configured for static hosting on GitHub Pages.
