@@ -288,6 +288,59 @@ main {
   color: var(--muted);
 }
 
+#expertise {
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(29, 138, 153, 0.11),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 18%,
+      rgba(255, 107, 53, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+}
+
+#expertise .cv-item {
+  border: 1px solid #cde1ef;
+  box-shadow: 0 8px 18px rgba(18, 38, 58, 0.08);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+#expertise .cv-item:hover {
+  transform: translateY(-3px);
+  border-color: #98c7e3;
+  box-shadow: 0 14px 24px rgba(18, 38, 58, 0.12);
+}
+
+#expertise .cv-item h3 {
+  color: #0f3d4c;
+}
+
+#languages {
+  background: linear-gradient(180deg, #ffffff 0%, #f2f9ff 100%);
+}
+
+#languages .chip-row {
+  margin-top: 0.8rem;
+  gap: 0.65rem;
+}
+
+#languages .chip {
+  background: #0f3d4c;
+  border-color: #0f3d4c;
+  color: #f7fdff;
+  font-weight: 600;
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 16px rgba(15, 61, 76, 0.22);
+}
+
 .badge-container {
   display: grid;
   gap: 1rem;
@@ -297,13 +350,30 @@ main {
 }
 
 #certifications {
-  background: linear-gradient(180deg, #ffffff 0%, #f4faff 100%);
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(29, 138, 153, 0.14),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 16%,
+      rgba(255, 107, 53, 0.16),
+      transparent 36%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f4faff 100%);
 }
 
 #certifications .muted {
   max-width: 48ch;
   margin-left: auto;
   margin-right: auto;
+  color: #496174;
+}
+
+#certifications h2 {
+  color: #0f3d4c;
+  margin-bottom: 0.35rem;
 }
 
 .badge-container > div {
@@ -323,6 +393,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.badge-container > div:hover {
+  transform: translateY(-4px);
+  border-color: #9fcce4;
+  box-shadow: 0 14px 28px rgba(18, 38, 58, 0.14);
 }
 
 .project-card p,
