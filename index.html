@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oliver Chandler | Developer Portfolio</title>
+    <title>Oliver Chandler | Software Engineer Portfolio</title>
     <meta
       name="description"
       content="Oliver Chandler's portfolio featuring software projects, experience, and education in cloud, security, and software engineering."
@@ -17,25 +17,49 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div id="globalBall" aria-label="Draggable UI ball" title="Drag me"></div>
     <div class="page-wrap">
       <header class="hero interactive-tilt" aria-labelledby="intro-heading">
         <div class="hero-grid">
           <div>
-            <span class="title-tag">Software Engineering Portfolio</span>
+            <span class="title-tag"
+              >Software Engineer - Cloud, Data, Backend, Security</span
+            >
             <h1 id="intro-heading">OLIVER CHANDLER</h1>
             <p class="lead">
-              Software Engineering student (GPA 4.9) specializing in AWS, cloud
-              systems, cybersecurity, and full stack development.
+              I design and build secure, scalable systems - from cloud-native
+              infrastructure to full-stack applications. My focus is on backend
+              architecture, data pipelines, and real-world engineering problems.
             </p>
             <div class="chip-row" aria-label="Core specialties">
               <span class="chip">Cloud</span>
+              <span class="chip">Backend</span>
               <span class="chip">Cybersecurity</span>
               <span class="chip">Data Pipelines</span>
               <span class="chip">Full Stack</span>
             </div>
             <p class="contact-line">
-              Tampere, Finland / Budapest, Hungary | +36 30 879 3324 / +358 41
-              364 6326 | choliver2005@gmail.com
+              Open to: internships and software engineering roles
+            </p>
+            <div class="chip-row" aria-label="Quick actions">
+              <a class="chip" href="#projects">View Projects</a>
+              <a
+                class="chip"
+                href="https://github.com/Kotzod"
+                target="_blank"
+                rel="noreferrer noopener"
+                >GitHub</a
+              >
+              <a
+                class="chip"
+                href="https://www.linkedin.com/in/oliver-chandler-b50997261/"
+                target="_blank"
+                rel="noreferrer noopener"
+                >LinkedIn</a
+              >
+            </div>
+            <p class="contact-line">
+              Tampere, Finland / Budapest, Hungary | choliver2005@gmail.com
             </p>
           </div>
           <div class="hero-photo-wrap">
@@ -51,51 +75,80 @@
       <main>
         <section class="section" id="about" style="--delay: 60ms">
           <h2>About Me</h2>
-          <p class="muted">
-            I am focused on secure, scalable software systems and practical
-            engineering. I enjoy combining backend architecture, cloud
-            platforms, and real-world problem solving in both individual and
-            team-based projects.
+          <p id="aboutTextSource" class="muted">
+            I am a software engineering student with a strong focus on building
+            practical, production-ready systems. I enjoy working at the
+            intersection of backend development, cloud platforms, and security -
+            where performance and reliability matter.
           </p>
           <p class="muted">
-            LinkedIn:
-            <a
-              href="https://www.linkedin.com/in/oliver-chandler-b50997261/"
-              target="_blank"
-              rel="noreferrer noopener"
-              >www.linkedin.com/in/oliver-chandler-b50997261/</a
-            >
+            My approach is simple: build systems that are secure, scalable, and
+            actually usable in the real world.
           </p>
+          <p id="aboutLinkedInSource" class="muted">
+            I have worked on projects ranging from data pipelines and full-stack
+            applications to secure backend APIs and cloud-based architectures,
+            both independently and in team environments.
+          </p>
+          <div class="about-particle-wrap">
+            <p class="about-particle-label">Particle-Driven ASCII</p>
+            <p class="about-particle-hint">
+              Move your mouse over this box to interact with the dots.
+            </p>
+            <canvas
+              id="aboutParticleCanvas"
+              width="760"
+              height="300"
+              aria-label="Particle text visualization"
+            ></canvas>
+          </div>
         </section>
 
         <section class="section" id="expertise" style="--delay: 90ms">
-          <h2>Expertise</h2>
+          <h2>Skills &amp; Expertise</h2>
           <div class="cv-grid">
             <article class="cv-item">
-              <h3>Cloud & Systems</h3>
+              <h3>Backend Engineering</h3>
               <p>
-                AWS, server technologies, Linux programming and administration.
+                Designing and building APIs, services, and system logic using
+                Java, Python, and Node.js. Focus on clean architecture,
+                performance, and maintainability.
               </p>
             </article>
             <article class="cv-item">
-              <h3>Security & Data</h3>
+              <h3>Cloud &amp; DevOps</h3>
               <p>
-                Cybersecurity, secure software development, data pipelines, SQL.
+                Experience with AWS, server technologies, and Linux systems.
+                Building and deploying scalable applications with a cloud-first
+                mindset.
               </p>
             </article>
             <article class="cv-item">
-              <h3>Development</h3>
-              <p>Java, Python, C++, and Full Stack (JavaScript, HTML, CSS).</p>
+              <h3>Security Engineering</h3>
+              <p>
+                Applying secure coding practices, authentication systems (JWT),
+                input validation, and data protection strategies.
+              </p>
+            </article>
+            <article class="cv-item">
+              <h3>Data Engineering</h3>
+              <p>
+                Developing data pipelines, working with structured data, and
+                building systems for data processing and analysis.
+              </p>
+            </article>
+            <article class="cv-item">
+              <h3>Full Stack Development</h3>
+              <p>
+                Creating responsive web applications using React and Vite, then
+                integrating them with backend services.
+              </p>
             </article>
             <article class="cv-item">
               <h3>Embedded Systems</h3>
-              <p>Microcontroller projects and C++ embedded programming.</p>
-            </article>
-            <article class="cv-item">
-              <h3>Tools & Soft Skills</h3>
               <p>
-                Advanced Microsoft Office (Excel, Access), Salesforce, and
-                multicultural communication.
+                Working with microcontrollers and low-level C/C++ programming
+                for hardware-based projects.
               </p>
             </article>
           </div>
@@ -107,14 +160,28 @@
             <article class="cv-item">
               <h3>Salesforce Developer</h3>
               <p>Budapest, Hungary | June - August 2025</p>
+              <p>
+                Developed Apex classes and backend logic for business workflows,
+                built and tested features in Salesforce, and improved
+                reliability through structured testing and debugging.
+              </p>
             </article>
             <article class="cv-item">
-              <h3>Wolt Courier</h3>
-              <p>Budapest, Hungary | 2022 -</p>
-            </article>
-            <article class="cv-item">
-              <h3>Hungarian Post Logistics Systems Division</h3>
+              <h3>Logistics Systems (Hungarian Post)</h3>
               <p>Budapest, Hungary | July 2023</p>
+              <p>
+                Gained exposure to real-world logistics operations and
+                large-scale workflows, with practical insight into technical
+                infrastructure and operational efficiency.
+              </p>
+            </article>
+            <article class="cv-item">
+              <h3>Independent Work &amp; Part-Time Roles</h3>
+              <p>2022 - Present</p>
+              <p>
+                Built discipline, adaptability, and time management while
+                balancing independent work with technical studies and projects.
+              </p>
             </article>
           </div>
         </section>
@@ -123,43 +190,38 @@
           <h2>Education</h2>
           <div class="cv-grid">
             <article class="cv-item">
-              <h3>Tampere University of Applied Sciences (FI)</h3>
-              <p>BSc in Software Engineering | 2024 - (GPA: 4.9)</p>
+              <h3>BSc Software Engineering</h3>
+              <p>Tampere University of Applied Sciences</p>
+              <p>2024 - Present</p>
+              <p>GPA: 4.9</p>
             </article>
             <article class="cv-item">
-              <h3>Kispesti Károlyi Mihály Secondary School (HU)</h3>
+              <h3>Relevant Areas</h3>
               <p>
-                Dual language diploma in Spanish and Hungarian, specialized in
-                Math and Informatics | 2019 - 2024
+                Cloud computing and AWS, operating systems and Linux
+                programming, cybersecurity and secure software development, full
+                stack and mobile development, and data systems and pipelines.
               </p>
             </article>
           </div>
         </section>
 
         <section class="section" id="coursework" style="--delay: 118ms">
-          <h2>Selected Coursework</h2>
+          <h2>Additional</h2>
           <div class="cv-grid">
             <article class="cv-item">
-              <h3>Cloud & Infrastructure</h3>
-              <p>Intro to Cloud and AWS, Server Technologies.</p>
+              <h3>Problem-Solving Mindset</h3>
+              <p>Strong analytical approach to building practical systems.</p>
             </article>
             <article class="cv-item">
-              <h3>Systems & Security</h3>
+              <h3>Team &amp; Independent Work</h3>
+              <p>Comfortable delivering results both solo and in teams.</p>
+            </article>
+            <article class="cv-item">
+              <h3>Technical Interests</h3>
               <p>
-                OS Concepts, Linux System Programming, Cybersecurity, Secure
-                Software Development.
+                Scalable systems, cloud architecture, and software security.
               </p>
-            </article>
-            <article class="cv-item">
-              <h3>Development</h3>
-              <p>
-                Full Stack Web Development, Mobile App Development 1, Embedded
-                Projects 1.
-              </p>
-            </article>
-            <article class="cv-item">
-              <h3>Data & Math</h3>
-              <p>Data Pipelines, Data Systems, ICT Engineering Mathematics.</p>
             </article>
           </div>
         </section>
@@ -167,14 +229,160 @@
         <section class="section" id="languages" style="--delay: 119ms">
           <h2>Languages</h2>
           <div class="chip-row" aria-label="Languages">
-            <span class="chip">English (Fluent, IELTS)</span>
-            <span class="chip">Hungarian (Native)</span>
-            <span class="chip">Spanish (Advanced)</span>
-            <span class="chip">Finnish (Basic)</span>
+            <span class="chip">English - Fluent (IELTS)</span>
+            <span class="chip">Hungarian - Native</span>
+            <span class="chip">Spanish - Advanced</span>
+            <span class="chip">Finnish - Basic</span>
           </div>
         </section>
 
-        <section class="section" id="achievements" style="--delay: 119ms">
+        <section class="section" id="projects" style="--delay: 119ms">
+          <h2>Projects</h2>
+          <p class="muted">
+            Focused project work across backend systems, data engineering, web,
+            and game prototyping.
+          </p>
+          <div class="projects-grid" id="projectsGrid">
+            <article
+              class="project-card interactive-tilt"
+              data-project-id="secure-backend-api"
+              tabindex="0"
+            >
+              <h3>Secure Backend API</h3>
+              <p>
+                Built a secure backend system with JWT authentication, bcrypt
+                hashing, structured validation, and clean API architecture.
+              </p>
+              <div class="tag-row" aria-label="Tech stack">
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </article>
+
+            <article
+              class="project-card interactive-tilt"
+              data-project-id="data-pipeline-system"
+              tabindex="0"
+            >
+              <h3>Data Pipeline System</h3>
+              <p>
+                Developed modular Python data pipelines for transforming,
+                processing, and structuring datasets for analysis.
+              </p>
+              <div class="tag-row" aria-label="Tech stack">
+                <span class="tag">Python</span>
+                <span class="tag">Data Engineering</span>
+                <span class="tag">Pipelines</span>
+              </div>
+            </article>
+
+            <article
+              class="project-card interactive-tilt"
+              data-project-id="full-stack-web-platform"
+              tabindex="0"
+            >
+              <h3>Full Stack Web Platform</h3>
+              <p>
+                Built a full-stack architecture with clear client/server
+                separation and a structured API contract for growth.
+              </p>
+              <div class="tag-row" aria-label="Tech stack">
+                <span class="tag">Full Stack</span>
+                <span class="tag">API Design</span>
+                <span class="tag">Web</span>
+              </div>
+            </article>
+
+            <article
+              class="project-card interactive-tilt"
+              data-project-id="frontend-application"
+              tabindex="0"
+            >
+              <h3>Frontend Application (React + Vite)</h3>
+              <p>
+                Designed a responsive frontend with reusable UI components,
+                routing, and maintainable project structure.
+              </p>
+              <div class="tag-row" aria-label="Tech stack">
+                <span class="tag">React</span>
+                <span class="tag">Vite</span>
+                <span class="tag">Router</span>
+              </div>
+            </article>
+
+            <article
+              class="project-card interactive-tilt"
+              data-project-id="weather-analytics-dashboard"
+              tabindex="0"
+            >
+              <h3>Weather Analytics Dashboard</h3>
+              <p>
+                Built an interactive dashboard with Open-Meteo integration,
+                tables, and visualized weather insights.
+              </p>
+              <div class="tag-row" aria-label="Tech stack">
+                <span class="tag">JavaScript</span>
+                <span class="tag">API Integration</span>
+                <span class="tag">Data Visualization</span>
+              </div>
+            </article>
+
+            <article
+              class="project-card interactive-tilt"
+              data-project-id="unity-game-prototype"
+              tabindex="0"
+            >
+              <h3>Unity Game Prototype</h3>
+              <p>
+                Created gameplay scripts, scene structure, and asset pipelines
+                while exploring game architecture and real-time systems.
+              </p>
+              <div class="tag-row" aria-label="Tech stack">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Game Systems</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="hobbies" style="--delay: 119ms">
+          <h2>Hobbies</h2>
+          <div class="chip-row" aria-label="Hobbies">
+            <span class="chip">Basketball</span>
+            <span class="chip">Martial Arts</span>
+            <span class="chip">Chess</span>
+            <span class="chip">Board Games</span>
+            <span class="chip">Card Games</span>
+          </div>
+        </section>
+
+        <section class="section" id="contact" style="--delay: 130ms">
+          <h2>Contact</h2>
+          <p class="muted">Let's build something impactful.</p>
+          <div class="chip-row" aria-label="Contact channels">
+            <a class="chip" href="mailto:choliver2005@gmail.com"
+              >Email: choliver2005@gmail.com</a
+            >
+            <a
+              class="chip"
+              href="https://www.linkedin.com/in/oliver-chandler-b50997261/"
+              target="_blank"
+              rel="noreferrer noopener"
+              >LinkedIn</a
+            >
+            <a
+              class="chip"
+              href="https://github.com/Kotzod"
+              target="_blank"
+              rel="noreferrer noopener"
+              >GitHub</a
+            >
+          </div>
+        </section>
+
+        <section class="section" id="experience-notes" style="--delay: 140ms">
           <h2>Achievements</h2>
           <div class="cv-grid">
             <article class="cv-item">
@@ -188,224 +396,43 @@
           </div>
         </section>
 
-        <section class="section" id="hobbies" style="--delay: 119ms">
-          <h2>Hobbies</h2>
-          <p class="muted">
-            Sports (basketball, martial arts), chess, and board/card games.
-          </p>
-        </section>
-
-        <section class="section" id="projects" style="--delay: 120ms">
-          <h2>Projects</h2>
-          <p class="muted">
-            A selection of technical projects across software, data, web, and
-            game development.
-          </p>
-          <div class="projects-grid" id="projectsGrid">
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="dreamhouse"
-              tabindex="0"
-            >
-              <h3>Dreamhouse Salesforce App</h3>
-              <p>
-                Salesforce DX project with a full platform-style setup and
-                config-driven workflow.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Salesforce</span>
-                <span class="tag">SFDX</span>
-                <span class="tag">LWC</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="datapipeline-final"
-              tabindex="0"
-            >
-              <h3>Data Pipeline Final Project</h3>
-              <p>
-                Final Python data pipeline project with runnable scripts,
-                helpers, and packaged outputs.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Python</span>
-                <span class="tag">Data</span>
-                <span class="tag">Pipelines</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="final-assignment"
-              tabindex="0"
-            >
-              <h3>Frontend Final Assignment</h3>
-              <p>
-                React/Vite final assignment with routing and a modern frontend
-                toolchain.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">React</span>
-                <span class="tag">Vite</span>
-                <span class="tag">Router</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="final-app"
-              tabindex="0"
-            >
-              <h3>Secure Backend API</h3>
-              <p>
-                Node/Express backend with MongoDB/Mongoose, JWT auth, bcrypt
-                password hashing, and Joi validation.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Node</span>
-                <span class="tag">Express</span>
-                <span class="tag">MongoDB</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="fullstack-project"
-              tabindex="0"
-            >
-              <h3>Full Stack Web Platform</h3>
-              <p>
-                Full-stack project split into frontend and backend with an API
-                contract between them.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Full-stack</span>
-                <span class="tag">API</span>
-                <span class="tag">Web</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="bowd-example"
-              tabindex="0"
-            >
-              <h3>Full Stack Learning Example</h3>
-              <p>
-                Full-stack example app with separate backend/frontend
-                directories.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Backend</span>
-                <span class="tag">Frontend</span>
-                <span class="tag">Examples</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="weather-app"
-              tabindex="0"
-            >
-              <h3>Weather Analytics Dashboard</h3>
-              <p>
-                Weather forecast app (Open-Meteo API) with charts, tables, and
-                statistics.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">JavaScript</span>
-                <span class="tag">API</span>
-                <span class="tag">Charts</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="valentines"
-              tabindex="0"
-            >
-              <h3>Interactive Valentine Mini Projects</h3>
-              <p>
-                Collection of small interactive experiences built for playful UI
-                experimentation.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Web</span>
-                <span class="tag">Interaction</span>
-                <span class="tag">Mini-apps</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="unity"
-              tabindex="0"
-            >
-              <h3>Unity Game Prototype</h3>
-              <p>
-                Unity game project bundle with engine configuration, assets,
-                scenes, and scripts.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">Game</span>
-              </div>
-              
-            </article>
-
-            <article
-              class="project-card interactive-tilt"
-              data-project-id="frontend-server"
-              tabindex="0"
-            >
-              <h3>Companion Node Server</h3>
-              <p>
-                Standalone server-side app used alongside frontend coursework
-                projects.
-              </p>
-              <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Node</span>
-                <span class="tag">Server</span>
-                <span class="tag">Tooling</span>
-              </div>
-              
-            </article>
-          </div>
-        </section>
-
         <section class="section" id="certifications" style="--delay: 180ms">
           <h2>Certifications</h2>
-          <p class="muted">Verified badges from Credly.</p>
+          <p class="muted">
+            AWS cloud foundations, networking fundamentals, and cybersecurity
+            core concepts.
+          </p>
           <div class="badge-container">
-            <div
-              data-iframe-width="150"
-              data-iframe-height="270"
-              data-share-badge-id="794e00ab-34d2-4550-b847-2ba58607f41f"
-              data-share-badge-host="https://www.credly.com"
-            ></div>
-            <div
-              data-iframe-width="150"
-              data-iframe-height="270"
-              data-share-badge-id="7d29610d-2d04-48d2-b6fb-aaea8f5f6006"
-              data-share-badge-host="https://www.credly.com"
-            ></div>
-            <div
-              data-iframe-width="150"
-              data-iframe-height="270"
-              data-share-badge-id="eb7429a9-9dc2-41d1-a124-e48889b68648"
-              data-share-badge-host="https://www.credly.com"
-            ></div>
+            <article class="badge-card">
+              <h3 class="badge-title">AWS Cloud Foundations</h3>
+              <div
+                class="badge-embed"
+                data-iframe-width="150"
+                data-iframe-height="270"
+                data-share-badge-id="794e00ab-34d2-4550-b847-2ba58607f41f"
+                data-share-badge-host="https://www.credly.com"
+              ></div>
+            </article>
+            <article class="badge-card">
+              <h3 class="badge-title">CCNA: Introduction to Networks</h3>
+              <div
+                class="badge-embed"
+                data-iframe-width="150"
+                data-iframe-height="270"
+                data-share-badge-id="7d29610d-2d04-48d2-b6fb-aaea8f5f6006"
+                data-share-badge-host="https://www.credly.com"
+              ></div>
+            </article>
+            <article class="badge-card">
+              <h3 class="badge-title">Introduction to Cybersecurity</h3>
+              <div
+                class="badge-embed"
+                data-iframe-width="150"
+                data-iframe-height="270"
+                data-share-badge-id="eb7429a9-9dc2-41d1-a124-e48889b68648"
+                data-share-badge-host="https://www.credly.com"
+              ></div>
+            </article>
           </div>
         </section>
       </main>
@@ -419,4 +446,3 @@
     <script type="module" src="main.js"></script>
   </body>
 </html>
-
