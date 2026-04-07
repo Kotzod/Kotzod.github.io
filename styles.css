@@ -137,13 +137,20 @@ h1 {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.9rem;
+  justify-content: center;
 }
 
 .chip {
-  border: 1px solid rgba(236, 247, 255, 0.5);
+  border: 1px solid #cfe3ef;
   border-radius: 999px;
   padding: 0.28rem 0.68rem;
   font-size: 0.78rem;
+  color: #124d61;
+  background: rgba(29, 138, 153, 0.1);
+}
+
+.hero .chip {
+  border: 1px solid rgba(236, 247, 255, 0.5);
   color: #f4fbff;
   background: rgba(255, 255, 255, 0.08);
 }
@@ -182,6 +189,7 @@ main {
   padding: 1.25rem;
   animation: riseIn 700ms ease both;
   animation-delay: var(--delay, 0ms);
+  text-align: center;
 }
 
 .section h2 {
@@ -221,6 +229,7 @@ main {
   flex-wrap: wrap;
   gap: 0.4rem;
   margin: 0.7rem 0 0.9rem;
+  justify-content: center;
 }
 
 .tag {
@@ -281,9 +290,46 @@ main {
 
 .badge-container {
   display: grid;
-  gap: 0.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 0.9rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-top: 1rem;
+  justify-items: center;
+}
+
+#certifications {
+  background: linear-gradient(180deg, #ffffff 0%, #f4faff 100%);
+}
+
+#certifications .muted {
+  max-width: 48ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge-container > div {
+  width: min(220px, 100%);
+  min-height: 300px;
+  padding: 0.9rem;
+  border-radius: 16px;
+  border: 1px solid #d1e6f3;
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255, 107, 53, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #f7fcff 100%);
+  box-shadow: 0 10px 22px rgba(18, 38, 58, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card p,
+.cv-item p,
+.muted {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .badge-placeholder {
