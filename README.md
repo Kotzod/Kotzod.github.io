@@ -4,10 +4,6 @@ Personal portfolio homepage (GitHub Pages) for Oliver Chandler.
 
 This site is intentionally build-less (plain HTML/CSS/JS) and includes an interactive canvas playground powered by the `@chenglou/pretext` library for text measurement & layout.
 
-## Live site
-
-- GitHub Pages: https://kotzod.github.io/
-
 ## What’s in here
 
 - `index.html` – semantic, accessible page structure
