@@ -1,10 +1,374 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Profile</title>
-</head>
-<body>
-    <h1>Welcome to my homepage</h1>
-    <p>Site content goes here.</p>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oliver Chandler | Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Oliver Chandler's portfolio featuring projects, certifications, and a playful pretext canvas text experiment."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="hero interactive-tilt" aria-labelledby="intro-heading">
+        <div class="hero-grid">
+          <div>
+            <span class="title-tag">Portfolio + pretext Playground</span>
+            <h1 id="intro-heading">Oliver Chandler</h1>
+            <p class="lead">
+              Software developer and student building efficient, scalable web
+              applications. This page keeps content semantic for
+              SEO/accessibility while adding a canvas text effect powered by
+              pretext.
+            </p>
+            <div class="chip-row" aria-label="Skills">
+              <span class="chip">Web Architecture</span>
+              <span class="chip">Performance</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Accessibility</span>
+            </div>
+          </div>
+          <div>
+            <canvas
+              id="textCanvas"
+              width="500"
+              height="220"
+              aria-hidden="true"
+            ></canvas>
+            <p id="canvasStatus" class="canvas-note">
+              Loading pretext canvas effect...
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section
+          class="section pretext-lab"
+          id="pretext-lab"
+          style="--delay: 50ms"
+        >
+          <h2>Pretext Lab</h2>
+          <p class="muted">
+            Cursor-reactive text ribbons measured with pretext for smooth canvas
+            layout experiments.
+          </p>
+          <canvas
+            id="pretextLabCanvas"
+            width="980"
+            height="190"
+            aria-hidden="true"
+          ></canvas>
+          <p id="pretextLabStatus" class="lab-note">Preparing pretext lab...</p>
+        </section>
+
+        <section class="section" id="about" style="--delay: 60ms">
+          <h2>About Me</h2>
+          <p class="muted">
+            I focus on building maintainable frontend and backend systems with
+            strong performance, accessibility, and indexability. I enjoy turning
+            technical constraints into creative user experiences.
+          </p>
+        </section>
+
+        <section class="section" id="projects" style="--delay: 120ms">
+          <h2>Projects</h2>
+          <p class="muted">
+            A selection of projects using semantic web standards and modern
+            engineering practices.
+          </p>
+          <div class="projects-layout">
+            <div class="projects-grid" id="projectsGrid">
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="dreamhouse"
+                tabindex="0"
+              >
+                <h3>Dreamhouse</h3>
+                <p>
+                  Salesforce DX project with a full platform-style setup and
+                  config-driven workflow.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Salesforce</span>
+                  <span class="tag">SFDX</span>
+                  <span class="tag">LWC</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=Dreamhouse"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="datapipeline-final"
+                tabindex="0"
+              >
+                <h3>Final_project_Oliver_Chandler</h3>
+                <p>
+                  Final Python data pipeline project with runnable scripts,
+                  helpers, and packaged outputs.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Python</span>
+                  <span class="tag">Data</span>
+                  <span class="tag">Pipelines</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=Datapipeline"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="final-assignment"
+                tabindex="0"
+              >
+                <h3>Final_Assignment</h3>
+                <p>
+                  React/Vite final assignment with routing and a modern frontend
+                  toolchain.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">React</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">Router</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=Final_Assignment"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="final-app"
+                tabindex="0"
+              >
+                <h3>final_app</h3>
+                <p>
+                  Node/Express backend with MongoDB/Mongoose, JWT auth, bcrypt
+                  password hashing, and Joi validation.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Node</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">MongoDB</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=final_app"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="fullstack-project"
+                tabindex="0"
+              >
+                <h3>fullstack_project</h3>
+                <p>
+                  Full-stack project split into frontend and backend with an API
+                  contract between them.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Full-stack</span>
+                  <span class="tag">API</span>
+                  <span class="tag">Web</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=fullstack_project"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="bowd-example"
+                tabindex="0"
+              >
+                <h3>bowd-w04-example-main</h3>
+                <p>
+                  Full-stack example app with separate backend/frontend
+                  directories.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Backend</span>
+                  <span class="tag">Frontend</span>
+                  <span class="tag">Examples</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=bowd-w04-example"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="weather-app"
+                tabindex="0"
+              >
+                <h3>final_assignement</h3>
+                <p>
+                  Weather forecast app (Open-Meteo API) with charts, tables, and
+                  statistics.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">API</span>
+                  <span class="tag">Charts</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=final_assignement"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="valentines"
+                tabindex="0"
+              >
+                <h3>valentine-projects-main</h3>
+                <p>
+                  Collection of small interactive experiences built for playful
+                  UI experimentation.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Web</span>
+                  <span class="tag">Interaction</span>
+                  <span class="tag">Mini-apps</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=valentine-projects"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="unity"
+                tabindex="0"
+              >
+                <h3>Unity project</h3>
+                <p>
+                  Unity game project bundle with engine configuration, assets,
+                  scenes, and scripts.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Unity</span>
+                  <span class="tag">C#</span>
+                  <span class="tag">Game</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=Unity"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+
+              <article
+                class="project-card interactive-tilt"
+                data-project-id="frontend-server"
+                tabindex="0"
+              >
+                <h3>server</h3>
+                <p>
+                  Standalone server-side app used alongside frontend coursework
+                  projects.
+                </p>
+                <div class="tag-row" aria-label="Tech stack">
+                  <span class="tag">Node</span>
+                  <span class="tag">Server</span>
+                  <span class="tag">Tooling</span>
+                </div>
+                <a
+                  href="https://github.com/Kotzod?tab=repositories&q=server"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >View Code</a
+                >
+              </article>
+            </div>
+
+            <aside class="project-spotlight" aria-label="Project spotlight">
+              <h3>Project Spotlight</h3>
+              <p class="muted">
+                Hover or focus a card to preview it. The canvas text layout is
+                measured with pretext.
+              </p>
+              <canvas
+                id="projectsCanvas"
+                width="500"
+                height="260"
+                aria-hidden="true"
+              ></canvas>
+              <p id="projectsStatus" class="lab-note">
+                Preparing project spotlight...
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="certifications" style="--delay: 180ms">
+          <h2>Certifications</h2>
+          <p class="muted">Verified badges from Credly.</p>
+          <div class="badge-container">
+            <div
+              data-iframe-width="150"
+              data-iframe-height="270"
+              data-share-badge-id="794e00ab-34d2-4550-b847-2ba58607f41f"
+              data-share-badge-host="https://www.credly.com"
+            ></div>
+            <div
+              data-iframe-width="150"
+              data-iframe-height="270"
+              data-share-badge-id="7d29610d-2d04-48d2-b6fb-aaea8f5f6006"
+              data-share-badge-host="https://www.credly.com"
+            ></div>
+            <div
+              data-iframe-width="150"
+              data-iframe-height="270"
+              data-share-badge-id="eb7429a9-9dc2-41d1-a124-e48889b68648"
+              data-share-badge-host="https://www.credly.com"
+            ></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script
+      type="text/javascript"
+      async
+      src="https://cdn.credly.com/assets/utilities/embed.js"
+    ></script>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>
