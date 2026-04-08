@@ -73,16 +73,7 @@ The site is fully static and build-less, using plain HTML, CSS, and JavaScript.
 - `index.html` - page structure and content
 - `styles.css` - layout, visual system, animations, and responsive styling
 - `main.js` - interaction logic and canvas effects
-- `CNAME` - custom domain configuration (if used)
-
-## Run Locally
-
-You can open `index.html` directly, but a local server is recommended.
-
-1. Run:
-   - `python -m http.server 5173`
-2. Open:
-   - http://localhost:5173/
+- `CNAME` - custom domain configuration
 
 ## Deployment
 
