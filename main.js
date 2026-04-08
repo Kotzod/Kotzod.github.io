@@ -7,6 +7,7 @@ const reducedMotion = window.matchMedia(
 const globalBall = document.getElementById("globalBall");
 const aboutParticleCanvas = document.getElementById("aboutParticleCanvas");
 const aboutTextSource = document.getElementById("aboutTextSource");
+const globalBallMoveEventName = "global-ball-move";
 
 function initOceanDotsBackground() {
   const existing = document.getElementById("oceanDotsCanvas");
@@ -209,6 +210,8 @@ function initGlobalBall() {
     velY: 0,
     ballW: 58,
     ballH: 58,
+    prevCenterX: 0,
+    prevCenterY: 0,
   };
 
   const updateBallSize = () => {
@@ -260,6 +263,23 @@ function initGlobalBall() {
 
   const applyBallPosition = (x, y) => {
     globalBall.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+    const centerX = x + state.ballW * 0.5;
+    const centerY = y + state.ballH * 0.5;
+    window.dispatchEvent(
+      new CustomEvent(globalBallMoveEventName, {
+        detail: {
+          x: centerX,
+          y: centerY,
+          px: state.prevCenterX,
+          py: state.prevCenterY,
+          dragging: state.dragging,
+        },
+      }),
+    );
+
+    state.prevCenterX = centerX;
+    state.prevCenterY = centerY;
   };
 
   const updateTargetFromPointer = () => {
@@ -406,6 +426,8 @@ function initGlobalBall() {
   });
 
   updateBallSize();
+  state.prevCenterX = state.posX + state.ballW * 0.5;
+  state.prevCenterY = state.posY + state.ballH * 0.5;
   state.targetX = state.posX;
   state.targetY = state.posY;
   applyBallPosition(state.posX, state.posY);
@@ -428,6 +450,13 @@ function initAboutParticleText() {
   }
 
   const mouse = { x: -9999, y: -9999, px: -9999, py: -9999 };
+  const ball = {
+    x: -9999,
+    y: -9999,
+    px: -9999,
+    py: -9999,
+    active: false,
+  };
   let particles = [];
   let rafId = 0;
 
@@ -534,6 +563,14 @@ function initAboutParticleText() {
     const width = offscreen.width;
     const height = offscreen.height;
     const mouseActive = mouse.x > -9000 && mouse.y > -9000;
+    const ballRangePad = 88;
+    const ballActive =
+      ball.active &&
+      ball.x > -ballRangePad &&
+      ball.x < width + ballRangePad &&
+      ball.y > -ballRangePad &&
+      ball.y < height + ballRangePad;
+    const hasInteractor = mouseActive || ballActive;
 
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#f6fbff";
@@ -546,11 +583,43 @@ function initAboutParticleText() {
 
     ctx.fillStyle = "#0e5a7c";
 
+    const applyRepel = (
+      p,
+      sourceX,
+      sourceY,
+      sourcePrevX,
+      sourcePrevY,
+      radiusSq,
+      trailRadiusSq,
+      strength,
+      trailStrength,
+    ) => {
+      const dx = p.x - sourceX;
+      const dy = p.y - sourceY;
+      const distSq = dx * dx + dy * dy;
+      if (distSq < radiusSq && distSq > 0.0001) {
+        const force = 1 - distSq / radiusSq;
+        p.vx += (dx / Math.sqrt(distSq)) * force * strength;
+        p.vy += (dy / Math.sqrt(distSq)) * force * strength;
+      }
+
+      // Keep interaction responsive during fast motion by repelling from the
+      // previous pointer position too (short trail segment).
+      const tdx = p.x - sourcePrevX;
+      const tdy = p.y - sourcePrevY;
+      const trailDistSq = tdx * tdx + tdy * tdy;
+      if (trailDistSq < trailRadiusSq && trailDistSq > 0.0001) {
+        const trailForce = 1 - trailDistSq / trailRadiusSq;
+        p.vx += (tdx / Math.sqrt(trailDistSq)) * trailForce * trailStrength;
+        p.vy += (tdy / Math.sqrt(trailDistSq)) * trailForce * trailStrength;
+      }
+    };
+
     particles.forEach((p) => {
       const ax = (p.tx - p.x) * 0.042;
       const ay = (p.ty - p.y) * 0.042;
 
-      if (!mouseActive) {
+      if (!hasInteractor) {
         // Non-bouncy settle mode after pointer leaves the canvas.
         p.vx *= 0.42;
         p.vy *= 0.42;
@@ -570,24 +639,22 @@ function initAboutParticleText() {
         return;
       }
 
-      const dx = p.x - mouse.x;
-      const dy = p.y - mouse.y;
-      const distSq = dx * dx + dy * dy;
-      if (distSq < 2800 && distSq > 0.0001) {
-        const force = 1 - distSq / 2800;
-        p.vx += (dx / Math.sqrt(distSq)) * force * 0.95;
-        p.vy += (dy / Math.sqrt(distSq)) * force * 0.95;
+      if (mouseActive) {
+        applyRepel(
+          p,
+          mouse.x,
+          mouse.y,
+          mouse.px,
+          mouse.py,
+          2800,
+          3200,
+          0.95,
+          0.62,
+        );
       }
 
-      // Keep interaction responsive during fast motion by repelling from the
-      // previous pointer position too (short trail segment).
-      const tdx = p.x - mouse.px;
-      const tdy = p.y - mouse.py;
-      const trailDistSq = tdx * tdx + tdy * tdy;
-      if (trailDistSq < 3200 && trailDistSq > 0.0001) {
-        const trailForce = 1 - trailDistSq / 3200;
-        p.vx += (tdx / Math.sqrt(trailDistSq)) * trailForce * 0.62;
-        p.vy += (tdy / Math.sqrt(trailDistSq)) * trailForce * 0.62;
+      if (ballActive) {
+        applyRepel(p, ball.x, ball.y, ball.px, ball.py, 3800, 4600, 1.08, 0.7);
       }
 
       p.vx = (p.vx + ax) * 0.91;
@@ -622,6 +689,29 @@ function initAboutParticleText() {
     mouse.y = -9999;
     mouse.px = -9999;
     mouse.py = -9999;
+  });
+
+  window.addEventListener(globalBallMoveEventName, (event) => {
+    const detail = event.detail;
+    if (!detail || typeof detail !== "object") {
+      return;
+    }
+
+    if (!detail.dragging) {
+      ball.active = false;
+      ball.x = -9999;
+      ball.y = -9999;
+      ball.px = -9999;
+      ball.py = -9999;
+      return;
+    }
+
+    const rect = aboutParticleCanvas.getBoundingClientRect();
+    ball.active = true;
+    ball.px = detail.px - rect.left;
+    ball.py = detail.py - rect.top;
+    ball.x = detail.x - rect.left;
+    ball.y = detail.y - rect.top;
   });
 
   window.addEventListener("resize", () => {
