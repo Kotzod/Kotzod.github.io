@@ -557,6 +557,57 @@ main {
   margin-bottom: 0.35rem;
 }
 
+.trailhead-summary {
+  margin: 0.9rem auto 0;
+  max-width: 920px;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d2e3f0;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.trailhead-summary p {
+  margin: 0.4rem 0;
+  color: #19495f;
+}
+
+.trailhead-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.95rem;
+}
+
+.trailhead-card {
+  flex: 1 1 230px;
+  max-width: 320px;
+  background: linear-gradient(160deg, #ffffff 0%, #f5fbff 100%);
+  border: 1px solid #d8e8f4;
+  border-radius: 14px;
+  padding: 0.85rem;
+  text-align: left;
+  box-shadow: 0 8px 18px rgba(18, 38, 58, 0.08);
+}
+
+.trailhead-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  color: #0f3d4c;
+}
+
+.trailhead-card p {
+  margin: 0;
+  color: #1f536a;
+}
+
+.trailhead-points {
+  margin-top: 0.6rem !important;
+  color: #0f3d4c !important;
+  font-weight: 700;
+}
+
 .badge-card {
   width: min(255px, 100%);
   min-height: 350px;
@@ -683,6 +734,11 @@ button:focus-visible {
 
   .page-wrap {
     padding: 0.8rem 0.8rem 3rem;
+  }
+
+  .trailhead-summary,
+  .trailhead-card {
+    text-align: center;
   }
 }
 
