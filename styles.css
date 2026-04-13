@@ -238,6 +238,47 @@ h1 {
   align-items: center;
 }
 
+.external-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  justify-content: center;
+}
+
+.external-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 177, 144, 0.48);
+  background: linear-gradient(130deg, #ffb05d 0%, #ff6b35 52%, #dc4514 100%);
+  color: #fffaf7;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(220, 69, 20, 0.3);
+  transition:
+    transform 170ms ease,
+    box-shadow 170ms ease,
+    filter 170ms ease;
+}
+
+.external-link-btn::after {
+  content: "↗";
+  font-size: 0.74rem;
+}
+
+.external-link-btn:hover,
+.external-link-btn:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 14px 26px rgba(220, 69, 20, 0.36);
+}
+
 .hero .chip {
   border: 1px solid rgba(236, 247, 255, 0.5);
   color: #f4fbff;
@@ -295,9 +336,12 @@ main {
 }
 
 #aboutTextSource,
+#aboutApproachSource,
+#aboutLifeSource,
 #aboutLinkedInSource {
-  font-size: clamp(1.04rem, 1.45vw, 1.24rem);
-  line-height: 1.82;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.75;
+  max-width: 70ch;
 }
 
 .section h2 {
@@ -319,6 +363,7 @@ main {
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
   gap: 0.9rem;
   margin-top: 0.9rem;
@@ -338,6 +383,11 @@ main {
     transform 220ms ease,
     box-shadow 220ms ease,
     border-color 220ms ease;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card.is-active {
@@ -386,6 +436,16 @@ main {
   font-weight: 600;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
+}
+
+.project-card .project-link-btn,
+.project-card .project-link-btn:visited {
+  margin-top: auto;
+  align-self: center;
+  color: #fffaf7;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.78rem;
 }
 
 .cv-grid {
@@ -546,10 +606,10 @@ main {
   gap: 0.55rem;
 }
 
-#aboutTextSource {
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  line-height: 1.75;
-  max-width: 70ch;
+#education .education-focus {
+  margin-top: 0.55rem;
+  color: #1c4b61;
+  font-weight: 600;
 }
 
 .about-particle-label {

@@ -6,7 +6,6 @@ const reducedMotion = window.matchMedia(
 ).matches;
 const globalBall = document.getElementById("globalBall");
 const aboutParticleCanvas = document.getElementById("aboutParticleCanvas");
-const aboutTextSource = document.getElementById("aboutTextSource");
 const globalBallMoveEventName = "global-ball-move";
 
 function initOceanDotsBackground() {
@@ -461,7 +460,7 @@ function initAboutParticleText() {
   let rafId = 0;
 
   const sourceText =
-    aboutTextSource?.textContent?.replace(/\s+/g, " ").trim() ?? "";
+    "Why did the edge server go bankrupt? Because it ran out of cache.";
 
   const computeTextLayout = (width, height) => {
     const text = sourceText || "Oliver Chandler";

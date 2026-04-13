@@ -43,15 +43,17 @@
             </p>
             <div class="chip-row" aria-label="Quick actions">
               <a class="chip" href="#projects">View Projects</a>
+            </div>
+            <div class="external-link-row" aria-label="External profiles">
               <a
-                class="chip"
+                class="external-link-btn"
                 href="https://github.com/Kotzod"
                 target="_blank"
                 rel="noreferrer noopener"
                 >GitHub</a
               >
               <a
-                class="chip"
+                class="external-link-btn"
                 href="https://www.linkedin.com/in/oliver-chandler-b50997261/"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -81,9 +83,14 @@
             intersection of backend development, cloud platforms, and security -
             where performance and reliability matter.
           </p>
-          <p class="muted">
+          <p id="aboutApproachSource" class="muted">
             My approach is simple: build systems that are secure, scalable, and
             actually usable in the real world.
+          </p>
+          <p id="aboutLifeSource" class="muted">
+            Outside engineering, I love cooking (especially Asian cuisine),
+            watching all types of sports, and bringing a fun, energetic, and
+            always-happy attitude to what I do.
           </p>
           <p id="aboutLinkedInSource" class="muted">
             I have worked on projects ranging from data pipelines and full-stack
@@ -105,7 +112,7 @@
         </section>
 
         <section class="section" id="expertise" style="--delay: 90ms">
-          <h2>Skills &amp; Expertise</h2>
+          <h2>Technical Skills</h2>
           <div class="cv-grid">
             <article class="cv-item">
               <h3>Backend Engineering</h3>
@@ -176,11 +183,21 @@
               </p>
             </article>
             <article class="cv-item">
-              <h3>Independent Work &amp; Part-Time Roles</h3>
-              <p>2022 - Present</p>
+              <h3>Wolt Courier &amp; Part-Time Roles</h3>
+              <p>Tampere, Finland | 2022 - Present</p>
               <p>
-                Built discipline, adaptability, and time management while
-                balancing independent work with technical studies and projects.
+                Worked as a Wolt courier while studying, building strong time
+                management, adaptability, customer communication, and
+                consistency in fast-paced day-to-day operations.
+              </p>
+            </article>
+            <article class="cv-item">
+              <h3>Tampere Formula Student Team</h3>
+              <p>Tampere, Finland | Team Member</p>
+              <p>
+                Contributing in a collaborative engineering team environment,
+                strengthening practical problem-solving, ownership, and
+                cross-functional teamwork.
               </p>
             </article>
           </div>
@@ -194,20 +211,29 @@
               <p>Tampere University of Applied Sciences</p>
               <p>2024 - Present</p>
               <p>GPA: 4.9</p>
+              <p class="education-focus">
+                Relevant areas: cloud computing and AWS, operating systems and
+                Linux programming, cybersecurity and secure software
+                development, full stack and mobile development, and data systems
+                and pipelines.
+              </p>
             </article>
             <article class="cv-item">
-              <h3>Relevant Areas</h3>
-              <p>
-                Cloud computing and AWS, operating systems and Linux
-                programming, cybersecurity and secure software development, full
-                stack and mobile development, and data systems and pipelines.
+              <h3>Kispesti Károlyi Mihály Secondary School</h3>
+              <p>Hungary | 2019 - 2024</p>
+              <p>GPA: 4.5</p>
+              <p class="education-focus">
+                Relevant areas: cloud computing and AWS, operating systems and
+                Linux programming, cybersecurity and secure software
+                development, full stack and mobile development, and data systems
+                and pipelines.
               </p>
             </article>
           </div>
         </section>
 
         <section class="section" id="coursework" style="--delay: 118ms">
-          <h2>Additional</h2>
+          <h2>Soft Skills</h2>
           <div class="cv-grid">
             <article class="cv-item">
               <h3>Problem-Solving Mindset</h3>
@@ -218,9 +244,18 @@
               <p>Comfortable delivering results both solo and in teams.</p>
             </article>
             <article class="cv-item">
-              <h3>Technical Interests</h3>
+              <h3>Adaptability &amp; Lifelong Learning</h3>
               <p>
-                Scalable systems, cloud architecture, and software security.
+                I adapt quickly to new tools, technologies, and changing project
+                requirements, while continuously building new skills.
+              </p>
+            </article>
+            <article class="cv-item">
+              <h3>Emotional Intelligence &amp; Self-Awareness</h3>
+              <p>
+                I stay composed under pressure and actively seek feedback on my
+                collaboration and communication style to keep improving in team
+                environments.
               </p>
             </article>
           </div>
@@ -258,6 +293,13 @@
                 <span class="tag">Express</span>
                 <span class="tag">MongoDB</span>
               </div>
+              <a
+                class="external-link-btn project-link-btn"
+                href="https://github.com/Kotzod/secure-backend-api"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View Repository</a
+              >
             </article>
 
             <article
@@ -275,6 +317,13 @@
                 <span class="tag">Data Engineering</span>
                 <span class="tag">Pipelines</span>
               </div>
+              <a
+                class="external-link-btn project-link-btn"
+                href="https://github.com/Kotzod/data-pipeline-system"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View Repository</a
+              >
             </article>
 
             <article
@@ -292,6 +341,13 @@
                 <span class="tag">API Design</span>
                 <span class="tag">Web</span>
               </div>
+              <a
+                class="external-link-btn project-link-btn"
+                href="https://github.com/Kotzod/full-stack-web-platform"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View Repository</a
+              >
             </article>
 
             <article
@@ -309,6 +365,13 @@
                 <span class="tag">Vite</span>
                 <span class="tag">Router</span>
               </div>
+              <a
+                class="external-link-btn project-link-btn"
+                href="https://github.com/Kotzod/frontend-react-vite-app"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View Repository</a
+              >
             </article>
 
             <article
@@ -326,23 +389,38 @@
                 <span class="tag">API Integration</span>
                 <span class="tag">Data Visualization</span>
               </div>
+              <a
+                class="external-link-btn project-link-btn"
+                href="https://github.com/Kotzod/weather-analytics-dashboard"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View Repository</a
+              >
             </article>
 
             <article
               class="project-card interactive-tilt"
-              data-project-id="unity-game-prototype"
+              data-project-id="cross-platform-dev-with-flutter"
               tabindex="0"
             >
-              <h3>Unity Game Prototype</h3>
+              <h3>Cross-Platform Dev with Flutter</h3>
               <p>
-                Created gameplay scripts, scene structure, and asset pipelines
-                while exploring game architecture and real-time systems.
+                Built cross-platform mobile development foundations with
+                reusable components and maintainable structure for Android and
+                iOS workflows.
               </p>
               <div class="tag-row" aria-label="Tech stack">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">Game Systems</span>
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Mobile</span>
               </div>
+              <a
+                class="external-link-btn project-link-btn"
+                href="https://github.com/Kotzod/cross-platform-dev-with-flutter"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View Repository</a
+              >
             </article>
           </div>
         </section>
@@ -362,18 +440,18 @@
           <h2>Contact</h2>
           <p class="muted">Let's build something impactful.</p>
           <div class="chip-row" aria-label="Contact channels">
-            <a class="chip" href="mailto:choliver2005@gmail.com"
+            <a class="external-link-btn" href="mailto:choliver2005@gmail.com"
               >Email: choliver2005@gmail.com</a
             >
             <a
-              class="chip"
+              class="external-link-btn"
               href="https://www.linkedin.com/in/oliver-chandler-b50997261/"
               target="_blank"
               rel="noreferrer noopener"
               >LinkedIn</a
             >
             <a
-              class="chip"
+              class="external-link-btn"
               href="https://github.com/Kotzod"
               target="_blank"
               rel="noreferrer noopener"
